@@ -1,5 +1,6 @@
 import re
 import streamlit as st
+from googleapiclient.discovery import build
 
 def extract_video_id(url):
     # Sử dụng regex để tìm ID video
@@ -9,7 +10,7 @@ def extract_video_id(url):
     return video_id.group(0) if video_id else None
 
 def video_comments(video_id):
-    from googleapiclient.discovery import build
+
     # empty list for storing reply
     replies = []
     comments = []
